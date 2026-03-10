@@ -11,7 +11,7 @@ values (1,'JIN',20);
 # ACCESSING DATA #
 SELECT * FROM students;
 # OUTPUT TABLE #
-![Table creation](images/Table.png)
+![Table creation](images/ New_Table.png)
 
 # FILTERING #
 

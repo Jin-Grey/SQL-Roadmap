@@ -10,4 +10,5 @@ INSTERT INTO students (id,name,age)
 values (1,'JIN',20);
 # ACCESSING DATA #
 SELECT * FROM students;
+# OUTPUT TABLE #
 ![Table creation](images/Table.png)

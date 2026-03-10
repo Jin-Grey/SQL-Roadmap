@@ -54,3 +54,20 @@ WHERE age > 22 AND age < 50;
 # Using OR #
 SELECT * FROM students
 WHERE age = 21 OR age = 25;
+
+# AGGREGATIONS #
+
+# COUNT() #
+SELECT COUNT(kills) FROM PLAYERS;
+
+# SUM() #
+SELECT SUM(kills) FROM PLAYERS;
+
+# AVG() #
+SELECT AVG(kills) FROM PLAYERS;
+
+# MAX() #
+SELECT MAX(kills) FROM PLAYERS;
+
+# MIN() #
+SELECT MIN(kills) FROM PLAYERS;

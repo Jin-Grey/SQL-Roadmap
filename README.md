@@ -202,3 +202,139 @@ LEFT JOIN   -> All left + matching right
 RIGHT JOIN  -> All right + matching left
 FULL JOIN   -> Everything from both
 ```
+
+
+## Sorting in SQL
+
+Sorting in SQL means arranging data in order using `ORDER BY`.
+
+You can sort data in two ways:
+
+* **Ascending (ASC)** → smallest to largest
+* **Descending (DESC)** → largest to smallest
+
+---
+
+## Basic Syntax
+
+```sql
+SELECT column_name
+FROM table_name
+ORDER BY column_name ASC;
+```
+
+or
+
+```sql
+SELECT column_name
+FROM table_name
+ORDER BY column_name DESC;
+```
+
+---
+
+## Example Table: players
+
+| id | name | kills |
+| -- | ---- | ----- |
+| 1  | Loki | 5     |
+| 2  | Thor | 9     |
+| 3  | Iron | 3     |
+| 4  | Hulk | 12    |
+
+---
+
+## 1️⃣ Sort by kills (Ascending)
+
+```sql
+SELECT * FROM players
+ORDER BY kills ASC;
+```
+
+**Result**
+
+| id | name | kills |
+| -- | ---- | ----- |
+| 3  | Iron | 3     |
+| 1  | Loki | 5     |
+| 2  | Thor | 9     |
+| 4  | Hulk | 12    |
+
+Smallest kills appear first.
+
+---
+
+## 2️⃣ Sort by kills (Descending)
+
+```sql
+SELECT * FROM players
+ORDER BY kills DESC;
+```
+
+**Result**
+
+| id | name | kills |
+| -- | ---- | ----- |
+| 4  | Hulk | 12    |
+| 2  | Thor | 9     |
+| 1  | Loki | 5     |
+| 3  | Iron | 3     |
+
+Highest kills appear first.
+
+---
+
+## 3️⃣ Sort by name (Alphabetical)
+
+```sql
+SELECT * FROM players
+ORDER BY name ASC;
+```
+
+**Result**
+
+```
+Hulk
+Iron
+Loki
+Thor
+```
+
+---
+
+## 4️⃣ Sort by Multiple Columns
+
+Example: sort by team first, then kills.
+
+```sql
+SELECT * FROM players
+ORDER BY team_id ASC, kills DESC;
+```
+
+Meaning:
+
+* First sort by **team**
+* Then sort **kills inside that team**
+
+---
+
+## 5️⃣ Sorting with LIMIT (Top Players)
+
+```sql
+SELECT * FROM players
+ORDER BY kills DESC
+LIMIT 3;
+```
+
+Shows **top 3 players with the highest kills**.
+
+---
+
+## Example for SQL Roadmap
+
+```sql
+-- Sorting players by highest kills
+SELECT name, kills
+FROM players
+ORDER BY kills DESC;
+```

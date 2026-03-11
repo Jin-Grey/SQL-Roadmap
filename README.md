@@ -71,3 +71,53 @@ SELECT MAX(kills) FROM PLAYERS;
 
 # MIN() #
 SELECT MIN(kills) FROM PLAYERS;
+
+# JOINS #
+Joins in SQL are used to combine rows from two or more tables based on a related column between them.
+Usually, tables are connected using Primary Key and Foreign Key.
+
+# TYPES OF JOINS #
+
+# 1.INNER JOIN #
+ returns only matching rows from both sides 
+
+# syntax #
+SELECT column, another_table_column,..
+FROM mytable
+INNER JOIN another_table
+ON mytable.id = another_table.id;
+
+# 2.LEFT JOIN #
+ returns all rows from the left table and matching rows from the right table.
+
+# syntax #
+SELECT column, another_table_column,..
+FROM mytable
+LEFT JOIN another_table
+ON mytable.id = another_table.id;
+
+# 3.RIGHT JOIN #
+ returns all rows from the right table and matching rows from the left table.
+
+# syntax #
+SELECT column, another_table_column,..
+FROM mytable
+RIGHT JOIN another_table
+ON mytable.id = another_table.id;
+
+# 4.FULL JOIN #
+ returns all the row from both the table.
+
+# syntax #
+SELECT column, another_table_column,..
+FROM mytable
+FULL JOIN another_table
+ON mytable.id = another_table.id;
+
+#  Note: MariaDB/MySQL does not support FULL JOIN directly. #
+
+# SIMPLE DIAGRAM #
+INNER JOIN  -> Matching data only
+LEFT JOIN   -> All left + matching right
+RIGHT JOIN  -> All right + matching left
+FULL JOIN   -> Everything from both

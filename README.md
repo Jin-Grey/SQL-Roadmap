@@ -244,7 +244,7 @@ ORDER BY column_name DESC;
 
 ---
 
-## 1️⃣ Sort by kills (Ascending)
+## 1️Sort by kills (Ascending)
 
 ```sql
 SELECT * FROM players
@@ -264,7 +264,7 @@ Smallest kills appear first.
 
 ---
 
-## 2️⃣ Sort by kills (Descending)
+## 2️Sort by kills (Descending)
 
 ```sql
 SELECT * FROM players
@@ -284,7 +284,7 @@ Highest kills appear first.
 
 ---
 
-## 3️⃣ Sort by name (Alphabetical)
+## 3️Sort by name (Alphabetical)
 
 ```sql
 SELECT * FROM players
@@ -302,7 +302,7 @@ Thor
 
 ---
 
-## 4️⃣ Sort by Multiple Columns
+## 4️Sort by Multiple Columns
 
 Example: sort by team first, then kills.
 
@@ -318,7 +318,7 @@ Meaning:
 
 ---
 
-## 5️⃣ Sorting with LIMIT (Top Players)
+## 5️Sorting with LIMIT (Top Players)
 
 ```sql
 SELECT * FROM players

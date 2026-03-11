@@ -1,123 +1,204 @@
-SQL-Roadmap
-# CREATEING TABLE #
- CREATE TABLE students (
- id INT PRIMARY KEY,
+# SQL Roadmap
+
+## Creating Table
+
+```sql
+CREATE TABLE students (
+    id INT PRIMARY KEY,
     name VARCHAR(50),
     age INT
-    );
-# INSERTING DATA #
-INSTERT INTO students (id,name,age)
-values (1,'JIN',20);
-# ACCESSING DATA #
+);
+```
+
+## Inserting Data
+
+```sql
+INSERT INTO students (id, name, age)
+VALUES (1, 'JIN', 20);
+```
+
+## Accessing Data
+
+```sql
 SELECT * FROM students;
-# OUTPUT TABLE #
+```
+
+## Output Table
+
 ![Table creation](images/New_Table.png)
 
-# FILTERING #
+---
 
+# Filtering
 
-# Show all students #
+### Show all students
+
+```sql
 SELECT * FROM students;
+```
 
-# Filter students older than 22 #
+### Filter students older than 22
+
+```sql
 SELECT * FROM students
 WHERE age > 22;
+```
 
-# Filter students with age equal to 21 #
+### Filter students with age equal to 21
+
+```sql
 SELECT * FROM students
 WHERE age = 21;
+```
 
-# Filter students with age between 21 and 30 #
+### Filter students with age between 21 and 30
+
+```sql
 SELECT * FROM students
 WHERE age BETWEEN 21 AND 30;
+```
 
-# Filter students with specific ages #
+### Filter students with specific ages
+
+```sql
 SELECT * FROM students
-WHERE age IN (21,25);
+WHERE age IN (21, 25);
+```
 
-# Filter students not having age 21 #
+### Filter students not having age 21
+
+```sql
 SELECT * FROM students
 WHERE age NOT IN (21);
+```
 
-# Filter names starting with S #
+### Filter names starting with S
+
+```sql
 SELECT * FROM students
 WHERE name LIKE 'S%';
+```
 
-# Filter names ending with A #
+### Filter names ending with A
+
+```sql
 SELECT * FROM students
 WHERE name LIKE '%A';
+```
 
-# Multiple conditions #
+### Multiple conditions
+
+```sql
 SELECT * FROM students
 WHERE age > 22 AND age < 50;
+```
 
-# Using OR #
+### Using OR
+
+```sql
 SELECT * FROM students
 WHERE age = 21 OR age = 25;
+```
 
-# AGGREGATIONS #
+---
 
-# COUNT() #
-SELECT COUNT(kills) FROM PLAYERS;
+# Aggregations
 
-# SUM() #
-SELECT SUM(kills) FROM PLAYERS;
+### COUNT()
 
-# AVG() #
-SELECT AVG(kills) FROM PLAYERS;
+```sql
+SELECT COUNT(kills) FROM players;
+```
 
-# MAX() #
-SELECT MAX(kills) FROM PLAYERS;
+### SUM()
 
-# MIN() #
-SELECT MIN(kills) FROM PLAYERS;
+```sql
+SELECT SUM(kills) FROM players;
+```
 
-# JOINS #
+### AVG()
+
+```sql
+SELECT AVG(kills) FROM players;
+```
+
+### MAX()
+
+```sql
+SELECT MAX(kills) FROM players;
+```
+
+### MIN()
+
+```sql
+SELECT MIN(kills) FROM players;
+```
+
+---
+
+# Joins
+
 Joins in SQL are used to combine rows from two or more tables based on a related column between them.
-Usually, tables are connected using Primary Key and Foreign Key.
 
-# TYPES OF JOINS #
+Usually tables are connected using **Primary Key** and **Foreign Key**.
 
-# 1.INNER JOIN #
- returns only matching rows from both sides 
+---
 
-# syntax #
-SELECT column, another_table_column,..
+## Types of Joins
+
+### 1. INNER JOIN
+
+Returns only matching rows from both tables.
+
+```sql
+SELECT column, another_table_column
 FROM mytable
 INNER JOIN another_table
 ON mytable.id = another_table.id;
+```
 
-# 2.LEFT JOIN #
- returns all rows from the left table and matching rows from the right table.
+### 2. LEFT JOIN
 
-# syntax #
-SELECT column, another_table_column,..
+Returns all rows from the left table and matching rows from the right table.
+
+```sql
+SELECT column, another_table_column
 FROM mytable
 LEFT JOIN another_table
 ON mytable.id = another_table.id;
+```
 
-# 3.RIGHT JOIN #
- returns all rows from the right table and matching rows from the left table.
+### 3. RIGHT JOIN
 
-# syntax #
-SELECT column, another_table_column,..
+Returns all rows from the right table and matching rows from the left table.
+
+```sql
+SELECT column, another_table_column
 FROM mytable
 RIGHT JOIN another_table
 ON mytable.id = another_table.id;
+```
 
-# 4.FULL JOIN #
- returns all the row from both the table.
+### 4. FULL JOIN
 
-# syntax #
-SELECT column, another_table_column,..
+Returns all rows from both tables.
+
+```sql
+SELECT column, another_table_column
 FROM mytable
 FULL JOIN another_table
 ON mytable.id = another_table.id;
+```
 
-#  Note: MariaDB/MySQL does not support FULL JOIN directly. #
+**Note:** MariaDB/MySQL does not support `FULL JOIN` directly.
 
-# SIMPLE DIAGRAM #
+---
+
+## Simple Diagram
+
+```
 INNER JOIN  -> Matching data only
 LEFT JOIN   -> All left + matching right
 RIGHT JOIN  -> All right + matching left
 FULL JOIN   -> Everything from both
+```
